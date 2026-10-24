@@ -71,8 +71,9 @@
         <a href="#pas4">4. Pujar el fitxer</a>
         <a href="#pas5">5. Activar Pages</a>
         <a href="#pas6">6. Veure la URL final</a>
-        <a href="#pas7">7. Actualitzar-la</a>
-        <a href="#errors">8. Errors habituals</a>
+        <a href="#subcarpetes">7. Crear webs dins de subcarpetes</a>
+        <a href="#pas7">8. Actualitzar-la</a>
+        <a href="#errors">9. Errors habituals</a>
       </div>
     </section>
 
@@ -145,14 +146,61 @@
       <div class="example"><code>https://EL-TEU-USUARI.github.io/NOM-DEL-REPOSITORI/</code></div>
       <p>Exemple:</p>
       <div class="example"><code>https://nuskadeberga.github.io/operacio2209/</code></div>
- <p>En el cas que s'hagi creat un index a una subcarpeta, l'adreça acabarà amb el nom de la subcarpeta </p>
+ <p>Si crees un <code>index.html</code> dins d’una subcarpeta, l’adreça acabarà amb el nom d’aquesta carpeta. Consulta el pas 7 per veure com fer-ho </p>
 	       <div class="example"><code>https://nuskadeberga.github.io/operacio2209/prova/</code></div>
       <div class="warning"><strong>Si encara no apareix Visit site:</strong> GitHub pot estar publicant la web. Espera uns minuts, torna a carregar la pàgina de <strong>Settings → Pages</strong> i comprova-ho de nou. Si la web s'obre però no mostra els últims canvis, a Windows prova <code>Ctrl + F5</code></div>
   
   </section>
 
+    <section class="step" id="subcarpetes">
+      <div class="step-head"><div class="num">7</div><div><h2>Crear una web dins d'una subcarpeta</h2><div class="sub">Exemple real: ORDITSITRAMES / dashboard</div></div></div>
+      <p>Un mateix repositori pot contenir diverses pàgines web. <strong>No cal crear un repositori nou ni tornar a activar GitHub Pages.</strong> Cadascuna tindrà un fitxer <code>index.html</code> propi.</p>
+      <div class="example"><code>ORDITSITRAMES/<br>├── index.html &nbsp; ← pàgina principal<br>└── dashboard/ &nbsp; ← carpeta (icona de carpeta)<br>&nbsp;&nbsp;&nbsp; └── index.html &nbsp; ← pàgina del dashboard</code></div>
+      <h3>7.1. Crear la carpeta i el fitxer correctament</h3>
+      <p>Entra al repositori <strong>ORDITSITRAMES</strong>, a la pestanya <strong>Code</strong>. Selecciona:</p>
+      <div class="clickpath"><span class="pill">Add file</span><span class="arrow">→</span><span class="pill">Create new file</span></div>
+      <p><strong>Al camp del nom del fitxer, escriu <code>dashboard/</code> i, després de la barra, <code>index.html</code>.</strong> Quan poses la barra, GitHub separa la carpeta del nom del fitxer: a la pantalla pots veure <strong>dashboard / index.html</strong>. Això és correcte.</p>
+      <div class="danger"><strong>Error que ens va passar:</strong> escriure només <code>dashboard</code> i confirmar. GitHub crea un <strong>fitxer</strong> amb aquest nom, no una carpeta. Una icona de document al costat de <code>dashboard</code> confirma l'error; una icona de carpeta confirma que està bé.</div>
+      <h3>7.2. Escriure contingut abans de desar</h3>
+      <p>Sota el nom del fitxer apareix un editor amb el text <code>Enter file contents here</code>. Fes-hi clic, esborra aquest text i enganxa el codi de prova següent:</p>
+      <div class="example"><code>&amp;lt;!DOCTYPE html&amp;gt;<br>&amp;lt;html lang="ca"&amp;gt;<br>&amp;lt;head&amp;gt;<br>&amp;nbsp;&amp;nbsp;&amp;lt;meta charset="UTF-8"&amp;gt;<br>&amp;nbsp;&amp;nbsp;&amp;lt;title&amp;gt;Dashboard - Ordits i Trames&amp;lt;/title&amp;gt;<br>&amp;lt;/head&amp;gt;<br>&amp;lt;body&amp;gt;<br>&amp;nbsp;&amp;nbsp;&amp;lt;h1&amp;gt;Dashboard d'Ordits i Trames&amp;lt;/h1&amp;gt;<br>&amp;nbsp;&amp;nbsp;&amp;lt;p&amp;gt;La carpeta dashboard funciona correctament!&amp;lt;/p&amp;gt;<br>&amp;lt;/body&amp;gt;<br>&amp;lt;/html&amp;gt;</code></div>
+      <p>És només una prova. Més endavant podràs substituir aquest contingut pel teu HTML complet.</p>
+      <h3>7.3. Pantalla «Commit changes»</h3>
+      <p>Prem el botó verd <strong>Commit changes...</strong>. S'obrirà una finestra amb diversos camps:</p>
+      <div class="checklist">
+        <label class="check"><input type="checkbox"> <strong>Commit message:</strong> pots posar <code>Create dashboard/index.html</code> (només és la descripció del canvi).</label>
+        <label class="check"><input type="checkbox"> <strong>Extended description:</strong> deixa-la buida; és opcional.</label>
+        <label class="check"><input type="checkbox"> <strong>Commit directly to the main branch:</strong> deixa aquesta opció seleccionada.</label>
+        <label class="check"><input type="checkbox"> <strong>Create a new branch:</strong> no la seleccionis per a aquest procediment senzill.</label>
+        <label class="check"><input type="checkbox"> Prem el botó verd final <strong>Commit changes</strong>.</label>
+      </div>
+      <div class="tip"><strong>Com comprovar-ho:</strong> a la llista del repositori ha d'aparèixer una <strong>carpeta</strong> blava anomenada <code>dashboard</code>. Clica-hi: a dins hi ha d'haver <code>index.html</code>.</div>
+      <h3>7.4. Comprovar les dues adreces</h3>
+      <div class="example"><code>Web principal:<br>https://nuskadeberga.github.io/ORDITSITRAMES/<br><br>Dashboard:<br>https://nuskadeberga.github.io/ORDITSITRAMES/dashboard/</code></div>
+      <p>La nova pàgina pot trigar una mica a actualitzar-se. Si el navegador mostra una versió antiga, prova <code>Ctrl + F5</code> a Windows. Comprova també que <strong>Settings → Pages</strong> continuï a <strong>main / (root)</strong>.</p>
+      <h3>7.5. Si has creat un fitxer «dashboard» per error</h3>
+      <div class="warning"><strong>Missatge possible:</strong> “Sorry, a file exists where you're trying to create a subdirectory”. Això passa perquè ja existeix un <strong>fitxer</strong> anomenat <code>dashboard</code> a la mateixa ubicació. GitHub no hi pot crear una carpeta amb el mateix nom.</div>
+      <ol>
+        <li>Si estàs a la finestra de commit amb l'error, prem <strong>Cancel</strong> i torna a la llista de fitxers del repositori.</li>
+        <li>Clica el <strong>fitxer</strong> <code>dashboard</code> (icona de document).</li>
+        <li>Obre el menú de tres punts de les accions del fitxer i selecciona <strong>Delete file</strong>. Confirma l'eliminació amb <strong>Commit changes</strong> directament a <code>main</code>.</li>
+        <li>Torna a <strong>Add file → Create new file</strong> i ara escriu <code>dashboard/index.html</code>, afegeix el codi HTML i fes el commit.</li>
+      </ol>
+      <div class="danger"><strong>No intentis reanomenar el fitxer existent directament a <code>dashboard/index.html</code></strong>: quan <code>dashboard</code> encara és un fitxer, GitHub pot mostrar l'error anterior. Primer elimina el fitxer creat per equivocació. <strong>Comprova que estàs eliminant només el fitxer incorrecte, mai l'<code>index.html</code> principal.</strong></div>
+      <h3>7.6. Posar-hi després el dashboard definitiu</h3>
+      <p>Entra a la carpeta <code>dashboard</code> i actualitza <strong>aquell</strong> <code>index.html</code> amb el teu HTML definitiu. Pots editar-lo si és petit; si ja tens un HTML gran preparat, és preferible pujar-lo des de <strong>Add file → Upload files</strong> dins de la carpeta, amb el nom <code>index.html</code>, i confirmar la substitució si cal. <strong>No substitueixis l'<code>index.html</code> de l'arrel!</strong></p>
+      <div class="warning">Si el dashboard utilitza imatges, CSS, JavaScript, manifest o altres fitxers, també els hauràs de col·locar on correspongui i revisar les rutes relatives. Tenir un <code>index.html</code> dins d'una carpeta no garanteix per si sol que tots els recursos funcionin.</div>
+      <div class="checklist">
+        <label class="check"><input type="checkbox"> Veig <code>dashboard</code> amb icona de carpeta.</label>
+        <label class="check"><input type="checkbox"> Dins hi ha un <code>index.html</code> amb contingut.</label>
+        <label class="check"><input type="checkbox"> Funciona la URL acabada en <code>/dashboard/</code>.</label>
+        <label class="check"><input type="checkbox"> La pàgina principal d'ORDITSITRAMES continua funcionant.</label>
+      </div>
+      <p><small>Documentació oficial: <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/creating-new-files" target="_blank" rel="noopener">Crear fitxers a GitHub</a> · <a href="https://docs.github.com/en/repositories/working-with-files/managing-files/deleting-files-in-a-repository" target="_blank" rel="noopener">Eliminar fitxers</a> · <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank" rel="noopener">GitHub Pages</a>.</small></p>
+    </section>
+
     <section class="step" id="pas7">
-      <div class="step-head"><div class="num">7</div><div><h2>Actualitza la web més endavant</h2><div class="sub">No creïs un altre repositori</div></div></div>
+      <div class="step-head"><div class="num">8</div><div><h2>Actualitza la web més endavant</h2><div class="sub">No creïs un altre repositori</div></div></div>
       <div class="clickpath">
         <span class="pill">Repositori</span><span class="arrow">→</span>
         <span class="pill">Add file</span><span class="arrow">→</span>
@@ -164,11 +212,12 @@
     </section>
 
     <section class="step" id="errors">
-      <div class="step-head"><div class="num">8</div><div><h2>Errors habituals</h2><div class="sub">I què vol dir cadascun</div></div></div>
+      <div class="step-head"><div class="num">9</div><div><h2>Errors habituals</h2><div class="sub">I què vol dir cadascun</div></div></div>
       <div class="golden">
-        <div class="gold-card"><strong>Error 404</strong>No existeix un fitxer anomenat <code>index.html</code>.</div>
+        <div class="gold-card"><strong>Error 404</strong>Comprova que la URL i la carpeta siguin correctes, que hi hagi un <code>index.html</code> al lloc adequat i que Pages hagi publicat.</div>
         <div class="gold-card"><strong>Pàgina en blanc</strong>El fitxer pot estar buit, incomplet o tenir un error important.</div>
         <div class="gold-card"><strong>No es veuen els canvis</strong>GitHub encara està publicant o el navegador conserva la versió anterior.</div>
+        <div class="gold-card"><strong>No es pot crear la carpeta</strong>Si ja existeix un fitxer amb el mateix nom (com <code>dashboard</code>), primer elimina el fitxer incorrecte. Consulta el pas 7.5.</div>
         <div class="gold-card"><strong>Botons que no funcionen</strong>Prova la URL pública a Safari, Chrome o Edge, no dins d'una app de documents.</div>
       </div>
     </section>
